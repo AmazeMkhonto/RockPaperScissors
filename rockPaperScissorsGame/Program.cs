@@ -26,30 +26,34 @@ public class RockPaperScissors
         string p1 = "";
         string p2 = ""; 
 
+        
         Console.WriteLine();
 
-        do
+        Console.WriteLine("Player 1, what do you want to play?");
+        p1 = Console.ReadLine().ToLower();
+
+        while (!plays.Contains(p1))
         {
+            Console.WriteLine("Player 1, your move is not valid. Please try again.");
+            Console.WriteLine();
             Console.WriteLine("Player 1, what do you want to play?");
             p1 = Console.ReadLine().ToLower();
+        }
 
-            if (!plays.Contains(p1))
-            {
-                Console.WriteLine("Player 1, your move is not valid.");
-                continue;
-            }
+        Console.WriteLine();
 
+        Console.WriteLine("Player 2, what do you want to play?");
+        p2 = Console.ReadLine().ToLower();
+
+        while (!plays.Contains(p2))
+        {
+            Console.WriteLine("Player 2, your move is not valid. Please try again.");
             Console.WriteLine();
-
             Console.WriteLine("Player 2, what do you want to play?");
             p2 = Console.ReadLine().ToLower();
+        }
 
-            if (!plays.Contains(p2))
-            {
-                Console.WriteLine("Player 2, your move is not valid.");
-            }
-        } while (!plays.Contains(p1) || !plays.Contains(p2));
-
+        System.Console.WriteLine();
         string answer = Rps(p1, p2);
         Console.WriteLine(answer);
     }
